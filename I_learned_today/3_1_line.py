@@ -24,3 +24,5 @@ plt.plot(x2, y2,'r.')
 plt.ylabel("p(x)")
 plt.title("probability density function(pdf)")
 plt.show()
+
+# https://rosettacode.org/wiki/Runge-Kutta_method#using_lambda

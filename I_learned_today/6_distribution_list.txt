@@ -1,0 +1,8 @@
+unif(0,1)
+1. Normal
+2. Bernoulli
+3. Beta
+4. Gamma
+5. Students' t
+
+#HW Normal, binomial, gamma, students't

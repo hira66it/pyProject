@@ -2,6 +2,9 @@ import os
 
 path = r'/Users/Hinyong_Mac/Downloads/L12.pdf'
 
+#0. 현재 디렉토리 출력
+print(os.getcwd)
+
 #1. Join the path
 print(os.path.join(r'/Users/Hinyong_Mac/Downloads/','L12.pdf'))
 

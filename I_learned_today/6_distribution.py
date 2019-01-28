@@ -56,6 +56,7 @@ mu = 0.1
 b = Bernoulli(mu)
 b_sample = b.sample(sample_size)
 
+print( '## Bernoulli Distribution ##\n')
 print( 'Theoritical_mean : ', b.mean() )
 print( 'Theoritical_var : ',b.var())
 print( 'Theoritical_std : ',b.std())
@@ -90,9 +91,9 @@ class Beta(TwoParameterDist):
         a= self.alpha
         b= self.beta
         self.mode = (a-1)/(a+b-2)
-
-        self.procsdSample = [0.] * n
         c = self._beta(self.mode)
+        self.procsdSample = [0.] * n
+        
         i=0
         np.random.seed(seed=None)
         random.seed(time.time_ns() * 2)
@@ -120,10 +121,52 @@ class Beta(TwoParameterDist):
         return math.sqrt(self.var())
 
 sample_size=10000
-mu = 0.1
 b = Beta(3,2)
 b_sample = b.sample(sample_size)
+print( '\n\n\n## Beta Distribution ##\n')
+print( 'Theoritical_mean : ', b.mean() )
+print( 'Theoritical_var : ',b.var())
+print( 'Theoritical_std : ',b.std())
+print( 'pdf(0.6) : ', b.pdf(0.6) )
+print( 'pdf(2/3) : ', b.pdf(2./3.) )
+print( 'sample_mean : ',mean(b_sample) )
+print( 'sample_var : ' ,var(b_sample))
+print( 'sample_std : ' ,std(b_sample))
 
+class NormalDist(TwoParameterDist):
+    def __init__(self,alpha,beta):
+        super().__init__(alpha, beta)
+        self.SIGMA = math.sqrt(self.beta)
+    def sample(self,n):
+        MU=self.alpha
+        
+        self.procsdSample = [0.] * n
+        i=0
+        while i<n:
+            x = random.uniform(-1.0, 1.0)
+            y = random.uniform(-1.0, 1.0)
+            w = x**2 + y**2
+            if w>=0 and w<=1:
+                g = MU + x * self.SIGMA * math.sqrt(-2 * math.log(w) / w)
+                
+                self.procsdSample[i]=g
+                i+=1
+        return self.procsdSample  
+    def pdf(self, x):
+        return 1./(math.sqrt(2.*math.pi)*self.SIGMA)*np.exp(-np.power((x - self.alpha)/self.SIGMA, 2.)/2)
+    def mean(self):
+        return self.alpha
+    def var(self):
+        a=self.alpha
+        b=self.beta
+        return b
+    def std(self):
+        return math.sqrt(self.beta)
+
+sample_size=10000
+b = NormalDist(0,1)
+b_sample = b.sample(sample_size)
+print( '\n\n\n## Normal Distribution ##\n')
 print( 'Theoritical_mean : ', b.mean() )
 print( 'Theoritical_var : ',b.var())
 print( 'Theoritical_std : ',b.std())

@@ -56,7 +56,7 @@ mu = 0.1
 b = Bernoulli(mu)
 b_sample = b.sample(sample_size)
 
-print( '## Bernoulli Distribution ##\n')
+print( '\n## Bernoulli Distribution ##\n')
 print( 'Theoritical_mean : ', b.mean() )
 print( 'Theoritical_var : ',b.var())
 print( 'Theoritical_std : ',b.std())
@@ -203,17 +203,30 @@ class Gamma(TwoParameterDist):
                 i+=1
         return self.procsdSample
         # ------------ You should edit below this line --------------------
-    def _gamma(self):
+
+    def pdf(self, x):
         a=self.alpha
         b=self.beta
-        return (b**a)
-    def pdf(self, x):
-        return 1./(math.sqrt(2.*math.pi)*self.SIGMA)*np.exp(-np.power((x - self.alpha)/self.SIGMA, 2.)/2)
+        return (b**a) * (x **(a-1)) * np.exp(-b*x) / gamma(a)
     def mean(self):
-        return self.alpha
+        return self.alpha/self.beta
     def var(self):
         a=self.alpha
         b=self.beta
-        return b
+        self.var_val = a / (b**2)
+        return self.var_val
     def std(self):
-        return math.sqrt(self.beta)
+        return math.sqrt(self.var_val)
+
+sample_size=10000
+b = Gamma(2,1)
+b_sample = b.sample(sample_size)
+print( '\n\n\n## Gamma Distribution ##\n')
+print( 'Theoritical_mean : ', b.mean() )
+print( 'Theoritical_var : ',b.var())
+print( 'Theoritical_std : ',b.std())
+print( 'pdf(0.6) : ', b.pdf(0.6) )
+print( 'pdf(2/3) : ', b.pdf(2./3.) )
+print( 'sample_mean : ',mean(b_sample) )
+print( 'sample_var : ' ,var(b_sample))
+print( 'sample_std : ' ,std(b_sample))

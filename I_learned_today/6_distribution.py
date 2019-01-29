@@ -175,3 +175,45 @@ print( 'pdf(2/3) : ', b.pdf(2./3.) )
 print( 'sample_mean : ',mean(b_sample) )
 print( 'sample_var : ' ,var(b_sample))
 print( 'sample_std : ' ,std(b_sample))
+
+class Gamma(TwoParameterDist):
+    def __init__(self,alpha,beta):
+        super().__init__(alpha,beta)
+    def sample(self,n):
+        a = self.alpha
+        b = self.beta
+        self.procsdSample = [0.] * n
+        i=0
+        d = a - 1. / 3.
+        c = 1. / math.sqrt(9.0 * d)
+        while i<n:
+            x = np.random.normal()
+            v = 1. + c * x
+            while (v <= 0.):
+                x = np.random.normal()
+                v = 1. + c * x
+            v = v * v * v
+            u = random.uniform(0, 1.0)
+            if (u < 1. - 0.0331 * (x * x * x * x)):
+                self.procsdSample[i]= (b * d * v)
+                i+=1
+                continue
+            if (math.log(u) < 0.5 * x * x + d * (1. - v + math.log(v))):
+                self.procsdSample[i]= (b * d * v)
+                i+=1
+        return self.procsdSample
+        # ------------ You should edit below this line --------------------
+    def _gamma(self):
+        a=self.alpha
+        b=self.beta
+        return (b**a)
+    def pdf(self, x):
+        return 1./(math.sqrt(2.*math.pi)*self.SIGMA)*np.exp(-np.power((x - self.alpha)/self.SIGMA, 2.)/2)
+    def mean(self):
+        return self.alpha
+    def var(self):
+        a=self.alpha
+        b=self.beta
+        return b
+    def std(self):
+        return math.sqrt(self.beta)

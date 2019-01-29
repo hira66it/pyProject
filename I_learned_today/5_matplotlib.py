@@ -30,6 +30,6 @@ s = np.random.normal(mu, sigma, 1000)
 # sample들의 historgram을 출력한다.
 count, bins, ignored = plt.hist(s, 30, normed=True)
 # sample들을 이용해서 Gaussian Distribution의 shape을 재구축해서 line으로 그린다.
-plt.plot(bins, 1/(sigma * np.sqrt(2 * np.pi)) * 
+plt.plot(bins, 1/(sigma * np.sqrt(2 * np.pi)) * \
 		np.exp( - (bins - mu)**2 / (2 * sigma**2) ), linewidth=2, color='r')
 plt.show()

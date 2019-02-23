@@ -5,7 +5,7 @@ python Project
 [python abstract](http://book.pythontips.com/en/latest/classes.html)
 
 # Flask Tutorial
-(VsCode_Flask_Tutorial)[https://code.visualstudio.com/docs/python/tutorial-flask]
+[VsCode_Flask_Tutorial](https://code.visualstudio.com/docs/python/tutorial-flask)
 
 ## Create virtual env
 python3 -m venv [name=env]
@@ -16,7 +16,7 @@ Try:
 `python3 -m virtualenv <desired_path>`
 
 ## Run Flask
-<code>python3 -m flask run</code>
+<code style="color:red">python3 -m flask run</code>
 >python3 -m flask run --host=127.0.0.2 --port=80.
 
 F9 = BreakPoint

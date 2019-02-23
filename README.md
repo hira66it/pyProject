@@ -17,6 +17,6 @@ Try:
 
 ## Run Flask
 <code>python3 -m flask run</code>
-    >python3 -m flask run --host=127.0.0.2 --port=80.
+>python3 -m flask run --host=127.0.0.2 --port=80.
 
 F9 = BreakPoint

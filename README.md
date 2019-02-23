@@ -16,7 +16,9 @@ Try:
 `python3 -m virtualenv <desired_path>`
 
 ## Run Flask
-<span style="color:red">python3 -m flask run</span>
->python3 -m flask run --host=127.0.0.2 --port=80.
+```python
+python3 -m flask run
+python3 -m flask run --host=127.0.0.2 --port=80.
+```
 
 F9 = BreakPoint

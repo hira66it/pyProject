@@ -16,21 +16,8 @@ Try:
 `python3 -m virtualenv <desired_path>`
 
 ## Run Flask
-```zsh
-python3 -m flask run
-python3 -m flask run --host=127.0.0.2 --port=80.
-```
 
 ```console
-python3 -m flask run
-python3 -m flask run --host=127.0.0.2 --port=80.
-```
-
-```sh
-python3 -m flask run
-python3 -m flask run --host=127.0.0.2 --port=80.
-```
-```shell
 python3 -m flask run
 python3 -m flask run --host=127.0.0.2 --port=80.
 ```

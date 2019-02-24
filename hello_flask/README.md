@@ -4,21 +4,31 @@ python Project
 ### useful site
 [python abstract](http://book.pythontips.com/en/latest/classes.html)
 
-#Flask Tutorial
+# Flask Tutorial
 (VsCode_Flask_Tutorial)[https://code.visualstudio.com/docs/python/tutorial-flask]
 
-## Create virtual env
-python3 -m venv [name=env]
+## 1. Create virtual env
+python3 -m venv <desired_name=env>
 
 if it fails for you in:
+```conosle
 `virtualenv -p python3 <desired_path>`
+```
 Try:
+```console
 `python3 -m virtualenv <desired_path>`
-
-## Run Flask
-    <code>python3 -m flask run</code>
-    >python3 -m flask run --host=127.0.0.1 --port=8080
-
-F9 = BreakPoint
-F10 = Next
-F5 = Start/Stop
+```
+## 2. Run Flask
+```console
+python3 -m flask run
+python3 -m flask run --host=127.0.0.1 --port=8080
+```
+## 2. Make requirements
+```console
+Ctrl + Shift + ` : to Open a currently used terminal
+pip freeze > requirements.txt
+```
+## 3. Debuging
+* F9 = BreakPoint
+* F10 = Next
+* F5 = Start/Stop

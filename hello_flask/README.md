@@ -9,7 +9,11 @@ python Project
 
 ## 1. Create virtual env
 ```console
-python3 -m venv <desired_name=env>
+2.* : pip install virtualenv
+3.* : sudo apt-get install python3-venv
+
+2.* : virtualenv env
+3.* : python3 -m venv <desired_name=env>
 ```
 if it fails for you in:
 ```console
@@ -19,8 +23,15 @@ Try:
 ```console
 python3 -m virtualenv <desired_path>
 ```
+## 1.1 Run Virtual env
+go to desired dir
+```console
+$ source env/bin/activate
+$ deactivate
+```
 ## 2. Run Flask
 ```console
+python -m flask run
 python3 -m flask run
 python3 -m flask run --host=127.0.0.1 --port=8080
 ```
@@ -30,7 +41,7 @@ python3 -m flask run --host=127.0.0.1 --port=8080
 Ctrl + Shift + ` : to Open a currently used terminal
 pip freeze > requirements.txt
 ```
-* To use in another environment
+* To use in other environment
 ```console
 pip install -r requirements.txt
 ```

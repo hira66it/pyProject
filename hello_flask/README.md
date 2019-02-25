@@ -5,7 +5,7 @@ python Project
 [python abstract](http://book.pythontips.com/en/latest/classes.html)
 
 # Flask Tutorial
-(VsCode_Flask_Tutorial)[https://code.visualstudio.com/docs/python/tutorial-flask]
+[VsCode_Flask_Tutorial](https://code.visualstudio.com/docs/python/tutorial-flask)
 
 ## 1. Create virtual env
 ```console
@@ -38,3 +38,11 @@ pip install -r requirements.txt
 * F9 = BreakPoint
 * F10 = Next
 * F5 = Start/Stop
+
+## 4. Refactoring
+you can run debug on vscode
+or
+you can run with your terminal after editing below one
+```console
+export set FLASK_APP=webapp
+```

@@ -1,5 +1,6 @@
 # LC #260 Single Number III
 # Algorithm practicing
+# 2019-02-27 Wed
 
 def test(input_arr):
     xor = 0

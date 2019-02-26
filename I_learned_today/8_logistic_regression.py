@@ -64,4 +64,5 @@ c = c-f
 # print('weight:\n',mat)
 xx = np.linspace(-3.5, 5.5, 100)
 yy = [-b*x/c-a/c for x in xx]
-plt.plot(xx, yy , 'b', alpha=0.6, label='line') 
+plt.plot(xx, yy , 'b', alpha=0.6, label='line')
+plt.show()

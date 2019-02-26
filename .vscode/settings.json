@@ -1,0 +1,4 @@
+{
+    "python.pythonPath": "/usr/local/bin/python37",
+    "python.linting.pylintEnabled": true
+}

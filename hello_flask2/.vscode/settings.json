@@ -1,5 +1,5 @@
 {
     "python.linting.pylintEnabled": true,
-    "python.pythonPath": "env/bin/python",
+    "python.pythonPath": "env3/bin/python",
     "git.ignoreLimitWarning": true
 }

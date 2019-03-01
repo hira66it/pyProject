@@ -30,6 +30,9 @@
 *.jpeg
 *.bmp
 
+### config files
+config_cosmos.py
+
 # Logs and databases #
 ######################
 *.log
@@ -44,8 +47,7 @@ Icon?
 Thumbs.db
 
 # directories #
-lib/
-*config*
-__pycache__/
-env*/
-.vscode*
+*/lib/
+*/__pycache__/
+*/env*/
+.vscode

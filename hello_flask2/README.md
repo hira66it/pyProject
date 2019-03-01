@@ -27,10 +27,15 @@ python3 -m virtualenv <desired_path>
 go to desired dir
 ```console
 $ source env/bin/activate
+or
+$ . env/bin/activate
+
 $ deactivate
 ```
 ## 2. Run Flask
 ```console
+export set FLASK_APP=webapp
+
 python -m flask run
 python3 -m flask run
 python3 -m flask run --host=127.0.0.1 --port=8080

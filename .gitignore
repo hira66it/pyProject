@@ -1,3 +1,5 @@
+# ver 1.0
+
 # Compiled source #
 ###################
 *.com
@@ -5,6 +7,7 @@
 *.exe
 *.o
 *.so
+*.pyc
 
 # Packages #
 ############
@@ -18,9 +21,14 @@
 *.rar
 *.tar
 *.zip
+
+# files #
 *.mp3
 *.mp4
 *.jpg
+*.png
+*.jpeg
+*.bmp
 
 # Logs and databases #
 ######################
@@ -37,3 +45,7 @@ Thumbs.db
 
 # directories #
 lib/
+*config*
+__pycache__/
+env*/
+.vscode*

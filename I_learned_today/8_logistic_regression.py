@@ -54,15 +54,15 @@ for i in range(n):
 mat =np.matmul(T_matrix.T,(np.linalg.pinv(X_matrix)).T)
 (a,b,c) = (mat[0][0],mat[0][1],mat[0][2])
 (d,e,f) = (mat[1][0],mat[1][1],mat[1][2])
-a = a-d
-b = b-e
-c = c-f
+# a = a-d
+# b = b-e
+# c = c-f
 # print(a,b,c)
 # print('T:\n',T_matrix)
 # print('X:\n',X_matrix)
 # print('psudo:\n',np.linalg.pinv(X_matrix))
 # print('weight:\n',mat)
 xx = np.linspace(-3.5, 5.5, 100)
-yy = [-b*x/c-a/c for x in xx]
+yy = [0.5/c-b*x/c-a/c for x in xx]
 plt.plot(xx, yy , 'b', alpha=0.6, label='line')
 plt.show()

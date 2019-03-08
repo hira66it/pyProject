@@ -4,7 +4,7 @@ def main():
     nn = Neural_NET()
     X = np.matrix("0 0; 0 1; 1 0; 1 1")
     y = np.matrix("0;1;1;0")
-    print(nn.train(X, y, 50000))
+    print(nn.train(X, y, 5000)) ## Eddit
     # for e in X:
     #     print(e,nn.predict(e))
 
@@ -24,7 +24,7 @@ class Neural_NET(calculus):
     def __init__(self):
         super(Neural_NET,self).__init__()
         self.learning_rate = 0.25
-        self.hidden_layer = 2
+        self.hidden_layer = 2 ## Eddit
     def forward(self,weights, inputb):
         s = np.matmul(inputb, weights)
         g = self.sigmoid(s)
